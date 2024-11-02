@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/css/boxicons.min.css" rel="stylesheet">
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        body {
+            /* Safari 4-5, Chrome 1-9 */
+            background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+            /* Safari 5.1+, Chrome 10+ */
+            background: -webkit-radial-gradient(circle, #1a82f7, #2F2727);
+            /* Firefox 3.6+ */
+            background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+            /* IE 10 */
+            background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+            height: 600px;
+        }
+
+        .centered-form {
+            margin-top: 150px;
+        }
+
+        .panel {
+            margin-bottom: 20px;
+            background-color: #fff;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .05)
+        }
+
+        .panel-body {
+            padding: 10px
+        }
+
+        .panel-title {
+            color: blue;
+        }
+        #password_confirmation{
+          padding-left: 17px;
+        }
+
+        i.bx {
+          font-size: large;
+        }
+        
+
+        .input-sm {
+            height: 100px;
+            padding: 10px 10px;
+            font-size: 15px;
+            line-height: 1;
+            border-radius: 9px;
+        }
+
+        .centered-form .panel {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+        }
+
+        label.label-floatlabel {
+            font-weight: bold;
+            color: #46b8da;
+            font-size: 11px;
+        }
+
+        .form-group {
+            position: relative;
+        }
+
+        .form-group .bx {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #c92020;
+        }
+
+        .form-group input {
+            padding-left: 40px; /* Adjust based on icon size */
+        }
+    </style>
+
+    <script type="text/javascript" src="http://www.clubdesign.at/floatlabels.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Please sign up for Weather Locator <small>It's free!</small></h3>
+                </div>
+                <div class="panel-body">
+                    <form method="post" action="register">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <i class='bx bxs-user' style='color:#191818'  ></i>
+                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="User Name">
+                        </div>
+                        <div class="form-group">
+                          <i class='bx bxl-gmail' style='color:#c92020' ></i>
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password1" id="password" class="form-control input-sm" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password2" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
